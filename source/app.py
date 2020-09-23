@@ -40,7 +40,7 @@ movies = json.load(f)
 
 
 @api.route('/movies')
-class TodoSimple(Resource):
+class AllMovies(Resource):
     def get(self):
         return jsonify(movies)
 
@@ -52,6 +52,7 @@ class MovieById(Resource):
 
 
         return jsonify(out)
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

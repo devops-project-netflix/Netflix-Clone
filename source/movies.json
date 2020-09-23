@@ -1,29 +1,35 @@
 [
     {
-        "name": "The Shawshank Redemption",
+        "Title": "The Shawshank Redemption",
         "id": "movie1",
+        "Description":"Top rated movie on IMDB",
         "cast": [
             "Tim Robbins",
             "Morgan Freeman",
             "Bob Gunton",
             "William Sadler"
         ],
-        "genres": [
+        "Categories": [
             "Drama"
-        ]
+        ],
+        "Tags":["Movie"],
+        "Storage":"AWS S3"
     },
     {
         "name": "The Godfather",
         "id": "movie2",
+        "Description":"Best performance by Marlon Brando",
         "cast": [
             "Marlon Brando",
             "Al Pacino",
             "James Caan",
             "Diane Keaton"
         ],
-        "genres": [
+        "Categories": [
             "Crime",
             "Drama"
-        ]
+        ],
+        "Tags":["Movie"],
+        "Storage":"AWS S3"
     }
 ]
