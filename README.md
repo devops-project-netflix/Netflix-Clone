@@ -46,10 +46,11 @@ JSON stub
 
 {
 “Title”:”xyz”,
-“Description”:”blah”,
+“Description”:”Information about the movie”,
 “Categories”:[],
 “Tags”:[]
-“Storage”:[]
+“Storage”:[],
+"Cast": []
 }
 
 Milestones  
