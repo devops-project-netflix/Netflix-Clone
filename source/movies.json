@@ -1,0 +1,29 @@
+[
+    {
+        "name": "The Shawshank Redemption",
+        "id": "movie1",
+        "cast": [
+            "Tim Robbins",
+            "Morgan Freeman",
+            "Bob Gunton",
+            "William Sadler"
+        ],
+        "genres": [
+            "Drama"
+        ]
+    },
+    {
+        "name": "The Godfather",
+        "id": "movie2",
+        "cast": [
+            "Marlon Brando",
+            "Al Pacino",
+            "James Caan",
+            "Diane Keaton"
+        ],
+        "genres": [
+            "Crime",
+            "Drama"
+        ]
+    }
+]
