@@ -1,24 +1,26 @@
 [
     {
+        "Categories": [
+            "Drama"
+        ],
+        "Description": "Top rated movie on IMDB with a rating of 9.6",
+        "Storage": "AWS S3",
+        "Tags": [
+            "Movie"
+        ],
         "Title": "The Shawshank Redemption",
-        "id": "movie1",
-        "Description":"Top rated movie on IMDB",
         "cast": [
             "Tim Robbins",
             "Morgan Freeman",
             "Bob Gunton",
             "William Sadler"
         ],
-        "Categories": [
-            "Drama"
-        ],
-        "Tags":["Movie"],
-        "Storage":"AWS S3"
+        "id": 0
     },
     {
-        "name": "The Godfather",
-        "id": "movie2",
-        "Description":"Best performance by Marlon Brando",
+        "Title": "The Godfather",
+        "id": 1,
+        "Description": "Best performance by Marlon Brando",
         "cast": [
             "Marlon Brando",
             "Al Pacino",
@@ -29,7 +31,46 @@
             "Crime",
             "Drama"
         ],
-        "Tags":["Movie"],
-        "Storage":"AWS S3"
+        "Tags": [
+            "Movie"
+        ],
+        "Storage": "AWS S3"
+    },
+    {
+        "Categories": [
+            "Drama"
+        ],
+        "Description": "Top rated series on IMDB with a rating of 9.6",
+        "Storage": "AWS S3",
+        "Tags": [
+            "Series"
+        ],
+        "Title": "The Game of Thrones",
+        "cast": [
+            "Emilia Clarke",
+            "Kit Harrington",
+            "Leana Headey",
+            "Ned Stark",
+            "Lionel Rossie"
+        ],
+        "id": 2
+    },
+    {
+        "Categories": [
+            "Thriller"
+        ],
+        "Description": "Based on the movie The Shawshank Redemption",
+        "Storage": "AWS S3",
+        "Tags": [
+            "Series"
+        ],
+        "Title": "Prison Break",
+        "cast": [
+            "Jack",
+            "Kit Sharma",
+            "Albert Einstein",
+            "Isaac Newton"
+        ],
+        "id": 3
     }
 ]
