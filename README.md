@@ -61,5 +61,10 @@ User Accounts
 
 Paradigm: dev, master, v,a,s branch
 
- 
+# Running the app on your local machine  
+Clone the Repository  
+cd into requirements directory  
+run pip install -r requirements.txt  
+cd into source directory  
+run ./local.sh   
 

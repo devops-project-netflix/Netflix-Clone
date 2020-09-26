@@ -23,14 +23,14 @@ def updateMovieByName(movie, name):
 
     code = db.collection.update({"Title":name}, movie)
 
-    print (code)
+    #print (code)
 
     return code
 
 def deleteMovieByName(name):
 
     code = db.collection.delete_one({"Title": name})
-    print (code)
+    #print (code)
 
     return code
 

@@ -47,12 +47,15 @@ class AllMovies(Resource):
 '''
 # GET PUT and DELETE the movies based on the id parameter of the video
 @api.route('/movies/<string:name>')
-class MovieById(Resource):
+#@api.response(404, 'Name not found.')
+class MovieByName(Resource):
     def get(self, name):
         
         # out = db.db.collection.find_one({"Title":name})
         out = getMovieByName(name)
-        print (out)
+        #print (out)
+        if out is None:
+            return "Movie by this name doesn't exist, Please try again", 404
         
         movies_json_string = json.dumps(out,default=json_util.default)
 
@@ -62,16 +65,31 @@ class MovieById(Resource):
         movie = request.get_json()
         #print (movie)
         # db.db.collection.update({"Title":name}, movie)
-        code = updateMovieByName(movie, name)
+        output = getMovieByName(name)
+        status = 200
+        if output is None:
+            movie = "No Movie with this name exists"
+            status = 404
+        else:
+            code = updateMovieByName(movie, name)
+            movie = "Movie updated successfully"
         # movies[index] = movie
         # json.dump(movies, f)
-        return jsonify(movie)
+        return movie, status
     def delete(self, name):
         
         # db.db.collection.delete_one({"Title":name})
-        code = deleteMovieByName(name)
+        out = getMovieByName(name)
+        message = None
+        status = 200
+        if out is not None:
+            code = deleteMovieByName(name)
+            message = 'Successful deletion'
+        else:
+            message = 'No movie with this name exists in the DB'
+            status = 404
 
-        return 'Successful Delettion'
+        return message, status
 
 
 '''
