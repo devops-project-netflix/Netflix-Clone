@@ -1,5 +1,5 @@
 from flask import Flask, request
-from flask_restx import Resource, Api
+from flask_restx import Resource, Api, reqparse
 import json
 from db import *
 from bson import json_util
@@ -20,9 +20,7 @@ api = Api(app)
 @api.route('/movies')
 class AllMovies(Resource):
     def get(self):
-        # f = open('movies.json',)
-        # movies = json.load(f)
-        # movies = db.db.collection.find()
+
         movies = getAllMovies()
         movies_dict = [doc for doc in movies]
         movies_json_string = json.dumps(movies_dict, default=json_util.default)
@@ -36,17 +34,20 @@ class AllMovies(Resource):
 
 
 '''
- @route    PUT GET DELETE /movies/name
+ @route    PUT GET DELETE /movies/name?name=xyz
  @desc     Fetch, update and delete a movie by name
  @access   Public
 '''
 
 
 # GET PUT and DELETE the movies based on the id parameter of the video
-@api.route('/movies/<string:name>')
+@api.route('/movies/name')
 class MovieByName(Resource):
-    def get(self, name):
+    def get(self):
 
+        parser = reqparse.RequestParser()
+        args = request.args
+        name = args.get('name')
         out = getMovieByName(name)
         print(out)
         if out is None:
@@ -57,8 +58,10 @@ class MovieByName(Resource):
         return json.loads(movies_json_string)
 
 
-    def put(self, name):
+    def put(self):
         
+        args = request.args
+        name = args.get('name')
         movie = request.get_json()
         output = getMovieByName(name)
         status = 200
@@ -72,8 +75,10 @@ class MovieByName(Resource):
         return movie, status
 
 
-    def delete(self, name):
+    def delete(self):
         
+        args = request.args
+        name = args.get('name')
         out = getMovieByName(name)
         message = None
         status = 200
@@ -89,18 +94,20 @@ class MovieByName(Resource):
 
 # Getting the list of all videos and adding new video
 '''
- @route    GET /movie/cast/name
+ @route    GET /movies/cast?name=xyz
  @desc     Fetch movie by name
  @access   Public
 '''
 # GET PUT and DELETE the movies based on the id parameter of the video
 
 
-@api.route('/movie/cast/<string:name>')
+@api.route('/movies/cast')
 class MovieByCast(Resource):
-    def get(self, name):
+    def get(self):
 
         # out = db.db.collection.find_one({"Title":name})
+        args = request.args
+        name = args.get('name')
         out = getMovieByCast(name)
         print(out)
         if out is None:
