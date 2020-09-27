@@ -66,5 +66,10 @@ Clone the Repository
 cd into requirements directory  
 run pip install -r requirements.txt  
 cd into source directory  
-run ./local.sh   
+run ./local.sh  
+
+# Running the make file  
+ Added makefile  
+ To push code into github run make prod  
+ To make a development environment run make dev_env  
 

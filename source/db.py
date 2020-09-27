@@ -1,6 +1,5 @@
-from flask import Flask
 from flask_pymongo import pymongo
-#from app import app
+
 CONNECTION_STRING = "mongodb+srv://ammar:abcd123@cluster0.8f754.mongodb.net/movies-db?retryWrites=true&w=majority"
 client = pymongo.MongoClient(CONNECTION_STRING)
 db = client.get_database('movies-db')
@@ -13,26 +12,27 @@ def getAllMovies():
 
     return movies
 
+
 def getMovieByName(name):
 
     out = db.collection.find_one({"Title": name})
 
     return out
 
+
 def updateMovieByName(movie, name):
 
-    code = db.collection.update({"Title":name}, movie)
-
-    #print (code)
+    code = db.collection.update({"Title": name}, movie)
 
     return code
+
 
 def deleteMovieByName(name):
 
     code = db.collection.delete_one({"Title": name})
-    #print (code)
 
     return code
+
 
 def insertNewMovie(movie):
     code = db.collection.insert_one(movie)
@@ -40,4 +40,8 @@ def insertNewMovie(movie):
     return code
 
 
+def getMovieByCast(actor):
 
+    output = db.collection.find_one({"cast": actor})
+
+    return output
