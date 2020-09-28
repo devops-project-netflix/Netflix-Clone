@@ -8,7 +8,7 @@ db = connect_to_database('movies-db')
 class MoviesSeed:
 	def __init__(self):
 		cwd = os.getcwd()
-		self.seed_file = cwd + '\\seeds\\data\\movies.json'
+		self.seed_file = cwd + '/seeds/data/movies.json'
 		
 	def seed(self):
 		with open(self.seed_file) as json_file:
