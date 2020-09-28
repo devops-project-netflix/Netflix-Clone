@@ -3,7 +3,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from db import *
 from bson.objectid import ObjectId
 
-
 db = connect_to_database('movies-db')
 
 class MoviesModel:
