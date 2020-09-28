@@ -1,0 +1,72 @@
+[
+  {
+    "Categories": [
+      "Movie"
+    ],
+    "Description": "Top rated movie on IMDB with a rating of 9.6",
+    "Storage": "AWS S3",
+    "Tags": [
+      "Drama"
+    ],
+    "Title": "The Shawshank Redemption",
+    "cast": [
+      "Tim Robbins",
+      "Morgan Freeman",
+      "Bob Gunton",
+      "William Sadler"
+    ]
+  },
+  {
+    "Title": "The Godfather",
+    "Description": "Best performance by Marlon Brando",
+    "cast": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Diane Keaton"
+    ],
+    "Categories": [
+      "Movie"
+    ],
+    "Tags": [
+      "Crime",
+      "Drama"
+    ],
+    "Storage": "AWS S3"
+  },
+  {
+    "Categories": [
+      "Series"
+    ],
+    "Description": "Top rated series on IMDB with a rating of 9.6",
+    "Storage": "AWS S3",
+    "Tags": [
+      "Drama"
+    ],
+    "Title": "The Game of Thrones",
+    "cast": [
+      "Emilia Clarke",
+      "Kit Harrington",
+      "Leana Headey",
+      "Ned Stark",
+      "Lionel Rossie"
+    ]
+  },
+  {
+    "Categories": [
+      "Thriller"
+    ],
+    "Description": "Based on the movie The Shawshank Redemption",
+    "Storage": "AWS S3",
+    "Tags": [
+      "Series"
+    ],
+    "Title": "Prison Break",
+    "cast": [
+      "Jack",
+      "Kit Sharma",
+      "Albert Einstein",
+      "Isaac Newton"
+    ]
+  }
+]
