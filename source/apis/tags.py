@@ -22,14 +22,6 @@ movie = api.model('Movie', {
 })
 
 
-
-
-# Getting the list of all videos and adding new video
-'''
- @route    POST /movies and GET /movies
- @desc     Add a movie and fetch all the movies from DB
- @access   Public
-'''
 @api.route('/api/tags')
 class Movies(Resource):
 	@api.expect(parser)
@@ -42,6 +34,13 @@ class Movies(Resource):
 		tempList = [mov['Tags'] for mov in movies_dict]
 		flatList = list(set(itertools.chain(*tempList)))
 		return http_response(200, flatList)
+
+# Getting the list of the tags of all the videos in the database
+'''
+ @route    GET /tags
+ @desc     Get all the movie tags for all movies
+ @access   Public
+'''
 
 @api.route('/api/tags/<string:objectTag>')
 class MoviebyTag(Resource):
