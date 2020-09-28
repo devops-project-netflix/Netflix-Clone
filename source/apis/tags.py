@@ -4,6 +4,7 @@ import json
 from db import *
 from bson import json_util
 from models.movies import MoviesModel
+from models.tags import TagsModel
 from utilities.responses import *
 import itertools
 
@@ -23,13 +24,15 @@ movie = api.model('Movie', {
 })
 
 
+
+
 # Getting the list of all videos and adding new video
 '''
  @route    POST /movies and GET /movies
  @desc     Add a movie and fetch all the movies from DB
  @access   Public
 '''
-@api.route('/api/movies')
+@api.route('/api/tags')
 class Movies(Resource):
 	@api.expect(parser)
 	@api.doc(responses={200: 'Movies List'})
@@ -41,3 +44,13 @@ class Movies(Resource):
 		tempList = [mov['Tags'] for mov in movies_dict]
 		flatList = list(set(itertools.chain(*tempList)))
 		return http_response(200, flatList)
+
+@api.route('/api/tags/<string:objectTag>')
+class MoviebyTag(Resource):
+	@api.doc(responses={200: 'A category doc'})
+	def get(self,objectTag):
+		movies = TagsModel().getByTag({objectTag})
+		return http_response(200, movies)
+
+
+

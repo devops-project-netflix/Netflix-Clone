@@ -6,7 +6,7 @@ from bson.objectid import ObjectId
 
 db = connect_to_database('movies-db')
 
-class CategoriesModel:
+class TagsModel:
 	def __init__(self):
 		self.collection = db.movies
 	
@@ -14,9 +14,14 @@ class CategoriesModel:
 		movies = self.collection.find(query_params)
 		return movies
 
-	def getById(self,identifier):
-		movies = self.collection.find_one({"_id": ObjectId(identifier)})
-		return movies
+	def getByTag(self,identifier):
+		movies = self.collection.find()
+		result = []
+		movies_dict = [doc for doc in movies]
+		for mov in movies_dict:
+			if ''.join(identifier).lower() in map(str.lower, mov['Tags']):
+				result.append(mov)
+		return result
 
 	def update(self,identifier,movie):
 		movies = self.collection.update({"_id": ObjectId(identifier)}, movie)
