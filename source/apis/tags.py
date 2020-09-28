@@ -11,9 +11,7 @@ import itertools
 api = Namespace('Tags', description='all movies tag endpoints')
 
 parser = api.parser()
-parser.add_argument('name', type=str, help='movie name', location='param')
-parser.add_argument('category', type=str, help='movie category', location='param')
-parser.add_argument('tags', type=str, help='movie tags', location='param')
+parser.add_argument('id', type=list, help='ID', location='param')
 
 movie = api.model('Movie', {
 	'Title': fields.String,
@@ -51,6 +49,28 @@ class MoviebyTag(Resource):
 	def get(self,objectTag):
 		movies = TagsModel().getByTag({objectTag})
 		return http_response(200, movies)
+
+
+@api.route('/api/TagRecommend/')
+class RecommendbyTag(Resource):
+	@api.expect(parser)
+	@api.doc(responses={200: 'Found Recommendations'})
+	def get(self):
+		inp = request.args.get('id')
+		watched = inp.split(",")
+		#watched = ['5f716d74cffb4d9a4a5f8704','5f716d74cffb4d9a4a5f8707']
+		movies = TagsModel().getRecommendations(watched)
+		return http_response(200, movies)
+
+@api.expect(movie)
+@api.route('/api/tags/<string:objectId>')
+class UpdateMovieTags(Resource):
+	@api.doc(responses={202: 'Movie Updated'})	
+	def put(self,objectId):
+		category = request.get_json()
+		print(category)
+		code = TagsModel().update(objectId,category)
+		return http_response(202, {"status":"category record updated"})
 
 
 
