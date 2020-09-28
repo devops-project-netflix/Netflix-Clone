@@ -1,5 +1,6 @@
 from flask_restx import Api
-from .movies import api as ns1
+from .movies import api as m
+from .categories import api as c
 
 api = Api(
 	version='1.0', 
@@ -7,4 +8,5 @@ api = Api(
     description='The following APIs are used for Netflix clone',
 )
 
-api.add_namespace(ns1)
+api.add_namespace(m)
+api.add_namespace(c)
