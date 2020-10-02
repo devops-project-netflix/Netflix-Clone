@@ -7,7 +7,7 @@ from db import *
 class MoviesSeed:
 	def __init__(self):
 		cwd = os.getcwd()
-		self.seed_file = cwd + '\\seeds\\data\\movies.json'
+		self.seed_file = cwd + '/seeds/data/movies.json'
 		
 	def seed(self):
 		print("Movie seed ..")

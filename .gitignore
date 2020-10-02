@@ -1,0 +1,14 @@
+.vscode/settings.json
+source/__pycache__/app.cpython-37.pyc
+source/__pycache__/db.cpython-37.pyc
+source/apis/__pycache__/__init__.cpython-37.pyc
+source/apis/__pycache__/__init__.cpython-37.pyc
+source/apis/__pycache__/categories.cpython-37.pyc
+source/apis/__pycache__/movies.cpython-37.pyc
+source/apis/__pycache__/tags.cpython-37.pyc
+source/models/__pycache__/categories.cpython-37.pyc
+source/apis/__pycache__/movies.cpython-37.pyc
+source/utilities/__pycache__/responses.cpython-37.pyc
+source/seeds/__pycache__/seeder.cpython-37.pyc
+source/seeds/__pycache__/seeder.cpython-37.pyc
+source/__pycache__/db.cpython-37.pyc

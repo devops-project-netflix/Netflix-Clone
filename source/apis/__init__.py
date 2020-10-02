@@ -1,6 +1,7 @@
 from flask_restx import Api
 from .movies import api as m
 from .categories import api as c
+from .tags import api as t
 
 api = Api(
 	version='1.0', 
@@ -10,3 +11,4 @@ api = Api(
 
 api.add_namespace(m)
 api.add_namespace(c)
+api.add_namespace(t)
