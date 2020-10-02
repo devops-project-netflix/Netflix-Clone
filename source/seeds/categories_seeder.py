@@ -6,7 +6,7 @@ import json
 class CategoriesSeed:
 	def __init__(self):
 		cwd = os.getcwd()
-		self.seed_file = cwd + '\\seeds\\data\\categories.json'
+		self.seed_file = cwd + '/seeds/data/categories.json'
 		
 	def seed(self):
 		print("Categories seed ..")

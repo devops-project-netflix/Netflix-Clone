@@ -47,6 +47,9 @@ class MoviebyTag(Resource):
 	@api.doc(responses={200: 'A category doc'})
 	def get(self,objectTag):
 		movies = TagsModel().getByTag({objectTag})
+		if not movies:
+			movies = "No results found"
+			return http_response(200, movies)
 		return http_response(200, movies)
 
 

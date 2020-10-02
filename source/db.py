@@ -5,4 +5,5 @@ def connect_to_database(database):
     db = client.get_database(database)
     print("Database context")
     print(db)
+    print("\n\n")
     return db
