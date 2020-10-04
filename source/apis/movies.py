@@ -9,9 +9,9 @@ from utilities.responses import *
 api = Namespace('Movies', description='all movies endpoints')
 
 parser = api.parser()
-parser.add_argument('name', type=str, help='movie name', location='param')
-parser.add_argument('category', type=str, help='movie category', location='param')
-parser.add_argument('tags', type=str, help='movie tags', location='param')
+parser.add_argument('Title', type=str, help='movie name', location='param')
+parser.add_argument('Categories', type=str, help='movie category', location='param')
+parser.add_argument('Tags', type=str, help='movie tags', location='param')
 
 movie = api.model('Movie', {
     'Title': fields.String,
@@ -33,7 +33,8 @@ class Movies(Resource):
 	@api.expect(parser)
 	@api.doc(responses={200: 'Movies List'})
 	def get(self):
-		movies = MoviesModel().get({})
+		query_params = request.args.to_dict()
+		movies = MoviesModel().get(query_params)
 		movies_dict = [doc for doc in movies]
 		return http_response(200, movies_dict)
 
