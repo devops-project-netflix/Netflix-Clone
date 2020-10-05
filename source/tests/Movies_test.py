@@ -26,7 +26,7 @@ class TestMoviesMethods(unittest.TestCase):
 
     def test_Movies_Get(self):
 
-        m = MoviesModel().get({'Title': 'The Game of Thrones'})
+        m = MoviesModel().get({})
         self.assertGreaterEqual(m.count(), 1)
 
 
