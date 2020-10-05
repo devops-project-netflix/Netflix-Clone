@@ -8,10 +8,10 @@ prod:	tests github
 
 github:	FORCE
 	echo "Just testing the make file"
-	- git commit -a
-	- git push origin master
+	 git commit -a
+	 git push origin ammar_aba450
 
-tests:	lint unit
+tests:	unit
 		
 test: FORCE
 	 -python $(SRC_DIR)/runTests.py
