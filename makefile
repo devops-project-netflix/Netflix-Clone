@@ -12,6 +12,9 @@ github:	FORCE
 	- git push origin master
 
 tests:	lint unit
+		
+test: FORCE
+	 -python $(SRC_DIR)/runTests.py
 
 unit:	FORCE
 	echo "We have to write some tests!"
