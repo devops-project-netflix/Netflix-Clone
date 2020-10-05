@@ -4,14 +4,14 @@ REQ_DIR = requirements
 
 FORCE:
 
-prod:	tests github
+prod:	tests
 
 github:	FORCE
 	echo "Just testing the make file"
 	- git commit -a
 	- git push origin ammar_aba450
 
-tests:	lint unit
+tests:	unit test
 
 test: FORCE
 	python $(SRC_DIR)/runTests.py
