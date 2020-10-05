@@ -11,13 +11,14 @@ github:	FORCE
 	- git commit -a
 	- git push origin ammar_aba450
 
-tests:	lint unit test
+tests:	lint unit
 
 test: FORCE
 	python $(SRC_DIR)/runTests.py
 
 unit:	FORCE
 	echo "We have to write some tests!"
+	python $(SRC_DIR)/runTests.py
 
 lint:	FORCE
 	- $(LINTER) $(SRC_DIR)/*.py
