@@ -1,5 +1,14 @@
 # Netflix-Clone
 
+# Completed Tasks
+**Flask-RESTX API server setup**
+
+**APIs for Movies, Categories, Tags**
+
+**Make file for running tests and builds**
+
+**Testcases using unittest**
+
 ## Ammar bin Ayaz, Sujay Lokesh, Varun Ojha  
 
 
