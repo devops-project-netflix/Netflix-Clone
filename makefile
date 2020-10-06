@@ -7,7 +7,7 @@ FORCE:
 prod:	tests github
 
 github:	FORCE
-	echo "Just testing the make file"
+	echo "Committing the changes to github"
 	- git commit -a
 	- git push origin master
 
