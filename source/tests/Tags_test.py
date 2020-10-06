@@ -36,4 +36,9 @@ class TestTagsMethods(unittest.TestCase):
         objectTag = "NotFound"
         movies = TagsModel().getByTag({objectTag})
         self.assertEqual(len(movies),0)
+    
+    def test_MovieRecommendations_Get(self):
+        watched = ['5f716d74cffb4d9a4a5f8704','5f716d74cffb4d9a4a5f8707']
+        movies = TagsModel().getRecommendations(watched)
+        self.assertEqual(m.status,"200 OK")
 
