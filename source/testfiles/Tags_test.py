@@ -39,6 +39,6 @@ class TestTagsMethods(unittest.TestCase):
     
     def test_MovieRecommendations_Get(self):
         watched = ['5f716d74cffb4d9a4a5f8704','5f716d74cffb4d9a4a5f8707']
-        movies = TagsModel().getRecommendations(watched)
-        self.assertEqual(m.status,"200 OK")
+        movies= TagsModel().getRecommendations(watched)
+        self.assertGreaterEqual(len(movies),0)
 

@@ -1,7 +1,4 @@
-
-
-
-from tests.Tags_test import TestTagsMethods
+from testfiles.Tags_test import TestTagsMethods
 #from tests.Categories_test import TestStringMethods
 import unittest
 
