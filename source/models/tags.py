@@ -7,6 +7,10 @@ import itertools
 
 db = connect_to_database('movies-db')
 
+# setting global variables for testing
+SAMPLE_OBJECT_ARRAY = ['5f716d74cffb4d9a4a5f8704','5f716d74cffb4d9a4a5f8707']
+TAGS_ARRAY = ['Drama', 'NotFound']
+
 class TagsModel:
 	def __init__(self):
 		self.collection = db.movies

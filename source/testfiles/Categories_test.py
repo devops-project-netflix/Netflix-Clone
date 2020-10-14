@@ -6,7 +6,7 @@ import json
 from db import *
 from bson import json_util
 #from models.movies import MoviesModel
-from models.categories import CategoriesModel
+from models.categories import CategoriesModel, SAMPLE_OBJECT_CAT
 from utilities.responses import *
 import itertools
 
@@ -29,8 +29,8 @@ class TestCategoriesMethods(unittest.TestCase):
 
 
     def test_Categories_Get_ById(self):
-        id = '5f716d75cffb4d9a4a5f8708'
-        m = CategoriesModel().getById(id)
+        # id = '5f716d75cffb4d9a4a5f8708'
+        m = CategoriesModel().getById(SAMPLE_OBJECT_CAT)
         #print (m.keys())
         self.assertEqual(m['name'], 'Movie')
 

@@ -6,7 +6,7 @@ import json
 from db import *
 from bson import json_util
 from models.movies import MoviesModel
-from models.tags import TagsModel
+from models.tags import TagsModel, SAMPLE_OBJECT_ARRAY, TAGS_ARRAY
 from utilities.responses import *
 import itertools
 
@@ -28,17 +28,15 @@ class TestTagsMethods(unittest.TestCase):
         self.assertEqual(m.status,"200 OK")
 
     def test_MoviebyTag_Found_Get(self):
-        objectTag = "Drama"
-        movies = TagsModel().getByTag({objectTag})
+        movies = TagsModel().getByTag({TAGS_ARRAY[0]})
         self.assertGreaterEqual(len(movies),1)
 
     def test_MoviebyTag_NotFound_Get(self):
-        objectTag = "NotFound"
-        movies = TagsModel().getByTag({objectTag})
+        movies = TagsModel().getByTag({TAGS_ARRAY[1]})
         self.assertEqual(len(movies),0)
     
     def test_MovieRecommendations_Get(self):
-        watched = ['5f716d74cffb4d9a4a5f8704','5f716d74cffb4d9a4a5f8707']
-        movies= TagsModel().getRecommendations(watched)
+        #watched = ['5f716d74cffb4d9a4a5f8704','5f716d74cffb4d9a4a5f8707']
+        movies= TagsModel().getRecommendations(SAMPLE_OBJECT_ARRAY)
         self.assertGreaterEqual(len(movies),0)
 

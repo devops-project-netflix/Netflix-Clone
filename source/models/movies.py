@@ -4,6 +4,9 @@ from db import *
 from bson.objectid import ObjectId
 
 db = connect_to_database('movies-db')
+# Setting global values for use in movies test
+NUM_KEYS = 5
+SAMPLE_OBJECT_ID = '5f716d74cffb4d9a4a5f8704'
 
 class MoviesModel:
 	def __init__(self):

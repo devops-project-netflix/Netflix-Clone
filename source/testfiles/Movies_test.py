@@ -6,7 +6,7 @@ import json
 from db import *
 from bson import json_util
 #from models.movies import MoviesModel
-from models.movies import MoviesModel
+from models.movies import MoviesModel, NUM_KEYS, SAMPLE_OBJECT_ID
 from utilities.responses import *
 import itertools
 
@@ -31,10 +31,9 @@ class TestMoviesMethods(unittest.TestCase):
 
 
     def test_Movies_Get_ById(self):
-        id = '5f716d74cffb4d9a4a5f8704'
-        m = MoviesModel().getById(id)
+        m = MoviesModel().getById(SAMPLE_OBJECT_ID)
         #print (m.keys())
-        self.assertGreaterEqual(len(m.keys()), 5)
+        self.assertGreaterEqual(len(m.keys()), NUM_KEYS)
 
 
 
