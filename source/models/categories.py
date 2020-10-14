@@ -5,6 +5,7 @@ from bson.objectid import ObjectId
 
 
 db = connect_to_database('movies-db')
+# Setting the value for category object id
 SAMPLE_OBJECT_CAT = '5f716d75cffb4d9a4a5f8708'
 
 class CategoriesModel:
