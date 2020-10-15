@@ -1,18 +1,7 @@
 import unittest
 
-from flask import Flask, request
-from flask_restx import Resource, Api, fields, marshal_with, reqparse, Namespace
-import json
-from db import *
-from bson import json_util
-#from models.movies import MoviesModel
-from models.movies import MoviesModel
-from utilities.responses import *
-import itertools
-
-import json
-
-from apis.movies import Movies
+from flask_restx import Namespace
+from models.movies import MoviesModel, NUM_KEYS, SAMPLE_OBJECT_ID, SAMPLE_MOVIE_OBJECT
 
 api = Namespace('Movies', description='all movies endpoints')
 
@@ -29,12 +18,10 @@ class TestMoviesMethods(unittest.TestCase):
         m = MoviesModel().get({})
         self.assertGreaterEqual(m.count(), 1)
 
-
     def test_Movies_Get_ById(self):
-        id = '5f716d74cffb4d9a4a5f8704'
-        m = MoviesModel().getById(id)
-        #print (m.keys())
-        self.assertGreaterEqual(len(m.keys()), 5)
+        m = MoviesModel().getById(SAMPLE_OBJECT_ID)
+        self.assertGreaterEqual(len(m.keys()), NUM_KEYS)
 
-
-
+    def test_Movies_Get_By_Name(self):
+        m = MoviesModel().get(SAMPLE_MOVIE_OBJECT)
+        self.assertEqual(m.count(), 1)

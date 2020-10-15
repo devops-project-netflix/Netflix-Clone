@@ -1,5 +1,15 @@
 # Netflix-Clone
 
+# Completed Tasks
+
+**Flask-RESTX API server setup**
+
+**APIs for Movies, Categories, Tags**
+
+**Make file for running tests and builds**
+
+**Testcases using unittest**
+
 ## Ammar bin Ayaz, Sujay Lokesh, Varun Ojha
 
 Netflix Clone  
@@ -62,14 +72,13 @@ Paradigm: dev, master, v,a,s branch
 # Running the app on your local machine
 
 Clone the Repository  
-cd into requirements directory  
-run pip install -r requirements.txt  
-cd into source directory  
-run ./local.sh
+`cd into requirements directory`  
+run `pip install -r requirements.txt`  
+`cd into source directory`  
+run `./local.sh`
 
 # Running the make file
 
 Added makefile  
- To push code into github run `make prod`  
- To make a development environment run `make dev_env`  
- To run test cases run `make test`
+ To push code into github `run make prod`  
+ To make a development environment run `make dev_env`
