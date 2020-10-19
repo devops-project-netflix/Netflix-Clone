@@ -82,3 +82,17 @@ run `./local.sh`
 Added makefile  
  To push code into github `run make prod`  
  To make a development environment run `make dev_env`
+
+# Running the frontend
+
+The Frontend is independent, We are using tmdb api to fetch data  
+ for the movies. The play functionality is not working for now  
+ and we are working on that.
+
+# To run locally you need to provide tmdb api key in the MovieState.js file
+
+`cd frontend`  
+ `npm install`  
+ `npm start`  
+ Demo Application running on Netlify server  
+ https://devops-frontend.netlify.app/
