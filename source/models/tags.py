@@ -10,6 +10,10 @@ db = connect_to_database('movies-db')
 # setting  values to be used for testing
 SAMPLE_OBJECT_ARRAY = ['5f716d74cffb4d9a4a5f8704', '5f716d74cffb4d9a4a5f8707']
 TAGS_ARRAY = ['Drama', 'NotFound']
+HTML_OK = "200 OK"
+MOVIE = "Movie"
+MOVIE_LENGTH = 1
+MOVIE_NOTFOUND = 0
 
 
 class TagsModel:

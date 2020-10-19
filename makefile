@@ -25,3 +25,6 @@ lint:	FORCE
 dev_env:	FORCE
 	pip install -r $(REQ_DIR)/requirements-dev.txt
 
+runprod: FORCE
+	cd source; ./local.sh
+
