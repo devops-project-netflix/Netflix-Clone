@@ -19,6 +19,9 @@ Requirements:
 REST APIs for CRUD on video content  
 Elasticsearch search on video content  
 User specific content APIs. (To store videos currently being watched by user)  
+[![Coverage Status](https://coveralls.io/repos/github/devops-project-netflix/Netflix-Clone/badge.svg?branch=master2)](https://coveralls.io/github/devops-project-netflix/Netflix-Clone?branch=master2)
+
+
 Video stream functional module  
 Login module (extra)  
 Browsing history logging API

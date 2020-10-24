@@ -29,3 +29,7 @@ dev_env:	FORCE
 runprod: FORCE
 	cd source; ./local.sh
 
+getcov: FORCE
+	-cd source;coverage run runTests.py 
+	-COVERALLS_REPO_TOKEN=kRQSAxMS1pgPHngroh0n16xQMmr7fQYZ4 coveralls
+
