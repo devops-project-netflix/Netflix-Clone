@@ -35,7 +35,7 @@ class Categories(Resource):
     @api.doc(responses={201: 'Category Inserted'})
     def post(self):
         category = request.get_json()
-        code = CategoriesModel().insert(category)
+        CategoriesModel().insert(category)
         return http_response(201, {"status": "category record inserted"})
 
 
@@ -57,10 +57,10 @@ class CategoriesById(Resource):
     @api.doc(responses={202: 'Movie Updated'})
     def put(self, objectId):
         category = request.get_json()
-        code = CategoriesModel().update(objectId, category)
+        CategoriesModel().update(objectId, category)
         return http_response(202, {"status": "category record updated"})
 
     @api.doc(responses={204: 'Movie Deleted'})
     def delete(self, objectId):
-        category = CategoriesModel().delete(objectId)
+        CategoriesModel().delete(objectId)
         return http_response(204, {"status": "category record deleted"})

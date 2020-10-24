@@ -1,7 +1,7 @@
 import os
 import sys
-from seeds.movies_seeder import *
-from seeds.categories_seeder import *
+from seeds.movies_seeder import MoviesSeed
+from seeds.categories_seeder import CategoriesSeed
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 

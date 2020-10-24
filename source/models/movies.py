@@ -9,6 +9,22 @@ db = connect_to_database('movies-db')
 NUM_KEYS = 5
 SAMPLE_OBJECT_ID = '5f716d74cffb4d9a4a5f8704'
 SAMPLE_MOVIE_OBJECT = {'Title': 'The Shawshank Redemption'}
+MOVIE_OBJECT = {
+    "Categories": [
+      "Movie"
+    ],
+    "Description": "Testing the post method for movies api",
+    "Storage": "Azure/Test",
+    "Tags": [
+      "Drama"
+    ],
+    "Title": "I am here to test",
+    "cast": [
+      "Varun",
+      "Ammar",
+      "Sujay"
+    ]
+  }
 
 
 class MoviesModel:

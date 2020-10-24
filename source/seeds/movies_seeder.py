@@ -18,4 +18,4 @@ class MoviesSeed:
                 movie = MoviesModel().get({'Title': data[index]['Title']})
                 movie = [doc for doc in movie]
                 if(0 == len(movie)):
-                    code = MoviesModel().insert(data[index])
+                    MoviesModel().insert(data[index])

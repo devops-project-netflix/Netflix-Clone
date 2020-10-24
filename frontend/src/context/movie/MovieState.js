@@ -11,15 +11,9 @@ import {
 } from "../types";
 
 
-let tmdbApiKey;
-if (process.env.NODE_ENV !== "production") {
 
-  tmdbApiKey = process.env.REACT_APP_API_KEY
-} else {
-  tmdbApiKey = process.env.API_KEY
-   
-}
-const MovieState = (props) => {
+
+   const MovieState = (props) => {
   const initialState = {
 
     loading: false,
@@ -34,7 +28,7 @@ const MovieState = (props) => {
     //console.log(text)
     setLoading();
     const res = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=${text}`
+      `https://api.themoviedb.org/3/search/movie?api_key=c38bb903dbeea0ea6970e15e7fff4f85&query=${text}`
     );
     console.log(res.data.results);
     dispatch({
@@ -47,7 +41,7 @@ const MovieState = (props) => {
     const getMovie = async (id) => {
       setLoading();
       const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key={api_key}&append_to_response=credits`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=c38bb903dbeea0ea6970e15e7fff4f85&append_to_response=credits`
         );
       console.log(res.data);
   

@@ -1,6 +1,7 @@
 import unittest
 from flask_restx import Namespace
-from models.tags import TagsModel, SAMPLE_OBJECT_ARRAY, TAGS_ARRAY, HTML_OK, MOVIE_LENGTH, MOVIE_NOTFOUND
+from models.tags import TagsModel, SAMPLE_OBJECT_ARRAY
+from models.tags import TAGS_ARRAY, HTML_OK, MOVIE_LENGTH, MOVIE_NOTFOUND
 from apis.tags import Movies
 
 api = Namespace('Tags', description='all movies tag endpoints')

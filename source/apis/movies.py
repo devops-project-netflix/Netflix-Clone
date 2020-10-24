@@ -7,7 +7,7 @@ api = Namespace('Movies', description='all movies endpoints')
 
 parser = api.parser()
 parser.add_argument('Title', type=str, help='movie name', location='param')
-parser.add_argument('Categories', type=str, help='movie category', location='param')
+parser.add_argument('Categories', type=str, help='category', location='param')
 parser.add_argument('Tags', type=str, help='movie tags', location='param')
 
 movie = api.model('Movie', {
@@ -41,7 +41,7 @@ class Movies(Resource):
     @api.doc(responses={201: 'Movie Inserted'})
     def post(self):
         movie = request.get_json()
-        code = MoviesModel().insert(movie)
+        MoviesModel().insert(movie)
         return http_response(201, {"status": "movie record inserted"})
 
 
@@ -63,13 +63,12 @@ class MoviesById(Resource):
     @api.doc(responses={202: 'Movie Updated'})
     def put(self, objectId):
         movie = request.get_json()
-        code = MoviesModel().update(objectId, movie)
+        MoviesModel().update(objectId, movie)
         return http_response(202, {"status": "movie record updated"})
 
     @api.doc(responses={204: 'Movie Deleted'})
     def delete(self, objectId):
-        movie = MoviesModel().delete(objectId)
-        print (movie)
+        MoviesModel().delete(objectId)
         return http_response(204, {"status": "movie record deleted"})
 
 
