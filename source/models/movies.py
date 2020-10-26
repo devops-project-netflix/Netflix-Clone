@@ -7,7 +7,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 db = connect_to_database('movies-db')
 # Setting values for use in movies test
 NUM_KEYS = 5
-SAMPLE_OBJECT_ID = '5f716d74cffb4d9a4a5f8704'
+SAMPLE_OBJECT_ID = '5f94ae84440a583101904fd6'
 SAMPLE_MOVIE_OBJECT = {'Title': 'The Shawshank Redemption'}
 MOVIE_OBJECT = {
     "Categories": [
