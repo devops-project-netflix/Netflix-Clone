@@ -1,4 +1,5 @@
 # Netflix-Clone
+
 [![Coverage Status](https://coveralls.io/repos/github/devops-project-netflix/Netflix-Clone/badge.svg?branch=master2)](https://coveralls.io/github/devops-project-netflix/Netflix-Clone?branch=master2)
 
 # Completed Tasks
@@ -11,6 +12,8 @@
 
 **Testcases using unittest**
 
+**Integration of Frontend with the Backend**
+
 ## Ammar bin Ayaz, Sujay Lokesh, Varun Ojha
 
 Netflix Clone  
@@ -19,9 +22,7 @@ Create a video streaming web application that allows users to view video content
 Requirements:  
 REST APIs for CRUD on video content  
 Elasticsearch search on video content  
-User specific content APIs. (To store videos currently being watched by user)  
-
-
+User specific content APIs. (To store videos currently being watched by user)
 
 Video stream functional module  
 Login module (extra)  
@@ -62,7 +63,16 @@ JSON stub
 “Categories”:[],
 “Tags”:[]
 “Storage”:[],
-"Cast": []
+"Cast": [],
+"vote_average":rating as a number,
+"vote_count":count of votes,
+"id": identifier,
+"status": Released or not,
+"poster_path":path of poster in tmdb,
+"homepage": link to the web,
+"budget": Budget in dollars,
+"backdrop_path": Url to its image,
+"tagline":tagline for the movie
 }
 
 Milestones  
@@ -100,3 +110,8 @@ The Frontend is independent, We are using tmdb api to fetch data
  `npm start`  
  Demo Application running on Netlify server  
  https://devops-frontend.netlify.app/
+
+# Integration
+
+The Integration of the frontend is complete with the backend  
+To Test Just run both the servers

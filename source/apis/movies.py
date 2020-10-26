@@ -71,6 +71,12 @@ class MoviesById(Resource):
         MoviesModel().delete(objectId)
         return http_response(204, {"status": "movie record deleted"})
 
+@api.route('/api/movies/id/<int:id>')
+class MoviesByIdFront(Resource):
+    @api.doc(responses={200: 'A movie doc'})
+    def get(self, id):
+        movie = MoviesModel().getByIdNew(id)
+        return http_response(200, movie)
 
 # 1. Standardize the REST in movies
 # 2. Add the categories REST
