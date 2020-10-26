@@ -50,3 +50,7 @@ class MoviesModel:
     def delete(self, identifier):
         movies = self.collection.delete_one({"_id": ObjectId(identifier)})
         return movies
+
+    def getByIdNew(self, identifier):
+        movies = self.collection.find_one({"id": identifier})
+        return movies
