@@ -8,14 +8,13 @@ prod:	tests github
 
 github:	FORCE
 	echo "Committing the changes to github"
-	- git add .
 	- git commit -a
 	- git push origin master2
 
 tests:	lint test
 		
 test: FORCE
-	 -python $(SRC_DIR)/runTests.py
+	-python $(SRC_DIR)/runTests.py
 
 unit:	FORCE
 	echo "We have to write some tests!"
