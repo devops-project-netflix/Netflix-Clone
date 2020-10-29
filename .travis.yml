@@ -1,6 +1,2 @@
 language: python
-script: 
-    - make dev_env
-    - make test
-    - cd travis_scripts
-    - bash before_deploy.sh
+script: make dev_env
