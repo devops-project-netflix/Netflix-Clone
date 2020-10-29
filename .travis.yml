@@ -1,5 +1,5 @@
 language: python
-script: - make dev_env
+script: make dev_env
 
 before_deploy: - cd travis_scripts; bash before_deploy.sh
 deploy: - cd travis_scripts; bash deploy.sh
