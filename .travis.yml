@@ -5,3 +5,5 @@ script:
 
 before_deploy: 
     - . .travis_scripts/before_deploy.sh
+
+deploy: "echo 'done!'"
