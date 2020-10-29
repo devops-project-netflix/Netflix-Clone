@@ -3,17 +3,10 @@ script:
     - make test
 
 before_deploy: 
-    script: 
-        -cd travis_scripts; bash before_deploy.sh
-    on:
-      branches: master2
+    -cd travis_scripts; bash before_deploy.sh
+
 deploy: 
-    script:
-        -cd travis_scripts; bash deploy.sh
-    on:
-      branches: master2
+    -cd travis_scripts; bash deploy.sh
+
 after_deploy:
-    script:  
         -cd travis_scripts; bash after_deploy.sh
-    on:
-      branches: master2
