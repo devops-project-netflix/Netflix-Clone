@@ -1,10 +1,16 @@
 language: python
 script: 
     - make dev_env
+    - echo "done"
 
 before_deploy: 
-    -cd travis_scripts; bash before_deploy.sh
+    -cd travis_scripts
+    script: bash before_deploy.sh
+
 deploy: 
-    -cd travis_scripts; bash deploy.sh
-after_deploy: 
-    -cd travis_scripts; bash after_deploy.sh
+    -cd travis_scripts
+    script: bash deploy.sh
+
+after_deploy:
+    cd travis_scripts
+    script: bash after_deploy.sh
