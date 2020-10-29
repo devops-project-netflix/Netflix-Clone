@@ -1,2 +1,4 @@
 language: python
 script: make dev_env
+
+deploy: make test
