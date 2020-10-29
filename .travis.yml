@@ -3,13 +3,16 @@ script:
     - make test
 
 before_deploy: 
-    -cd travis_scripts
-    -bash before_deploy.sh
+    script:
+        -cd travis_scripts
+        -bash before_deploy.sh
 
 deploy: 
-    -cd travis_scripts
-    -bash deploy.sh
+    script:
+        -cd travis_scripts
+        -bash deploy.sh
 
 after_deploy:
-    -cd travis_scripts
-    -bash after_deploy.sh
+    script:    
+        -cd travis_scripts
+        -bash after_deploy.sh
