@@ -3,6 +3,5 @@ script:
     - make dev_env
     - make test
 
-deploy: 
-    -cd travis_scripts
-    -./deploy.sh
+before_deploy: 
+    - . .travis_scripts/before_deploy.sh
