@@ -2,6 +2,7 @@ language: python
 script: 
     - make dev_env
     - make test
+    -echo "done"
 
 before_deploy: 
     -cd travis_scripts
