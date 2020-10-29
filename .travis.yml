@@ -1,5 +1,6 @@
 language: python
 script: 
+    - make dev_env
     - make test
 
 before_deploy: 
