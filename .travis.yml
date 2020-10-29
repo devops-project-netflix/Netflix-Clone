@@ -5,12 +5,5 @@ script:
 
 before_deploy: 
     -cd travis_scripts
-    script: bash before_deploy.sh
-
-deploy: 
-    -cd travis_scripts
-    script: bash deploy.sh
-
-after_deploy:
-    cd travis_scripts
-    script: bash after_deploy.sh
+    script: 
+    -bash before_deploy.sh
