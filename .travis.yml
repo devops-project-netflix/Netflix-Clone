@@ -3,8 +3,17 @@ script:
     - make dev_env
 
 before_deploy: 
-    -cd travis_scripts; bash before_deploy.sh
+    script: 
+        -cd travis_scripts; bash before_deploy.sh
+    on:
+      branches: master2
 deploy: 
-    -cd travis_scripts; bash deploy.sh
-after_deploy: 
-    -cd travis_scripts; bash after_deploy.sh
+    script:
+        -cd travis_scripts; bash deploy.sh
+    on:
+      branches: master2
+after_deploy:
+    script:  
+        -cd travis_scripts; bash after_deploy.sh
+    on:
+      branches: master2
