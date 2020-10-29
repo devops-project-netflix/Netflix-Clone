@@ -7,4 +7,5 @@ before_deploy:
     - . .travis_scripts/before_deploy.sh
 
 deploy: "echo 'done'"
-    on: branch : sujay_sl5202
+on: 
+    all_branches: true
