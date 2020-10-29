@@ -1,19 +1,4 @@
 language: python
 script: 
     - make dev_env
-
-before_deploy: 
-    script: 
-        -cd travis_scripts; bash before_deploy.sh
-    on:
-      branches: master2
-deploy: 
-    script:
-        -cd travis_scripts; bash deploy.sh
-    on:
-      branches: master2
-after_deploy:
-    script:  
-        -cd travis_scripts; bash after_deploy.sh
-    on:
-      branches: master2
+    - make test
