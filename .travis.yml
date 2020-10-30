@@ -8,4 +8,4 @@ before_deploy:
 
 deploy: "echo 'done'"
 on: 
-    all_branches: true
+    branch: sujay_sl5202
