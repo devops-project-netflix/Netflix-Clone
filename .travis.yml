@@ -3,9 +3,17 @@ script:
     - make dev_env
     - make test
 
-before_deploy: 
-    - . .travis_scripts/before_deploy.sh
+jobs:
+    include:
+    - stage: test
+        script:
+        - make test
+    
+    - stage: build+push:latest
+      
+      before_deploy: 
+        provider: script
+        script: ./travis_scripts/before_deploy.sh
 
-deploy: "echo 'done'"
-on: 
-    branch: sujay_sl5202
+      on: 
+        branch: sujay_sl5202
