@@ -1,7 +1,6 @@
 from flask import Flask
 from seeds.seeder import database_seed
 from apis import api
-from utilities.errors import errors
 
 app = Flask(__name__)
 api.init_app(app)

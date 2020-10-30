@@ -1,5 +1,7 @@
 # Netflix-Clone
 
+[![Coverage Status](https://coveralls.io/repos/github/devops-project-netflix/Netflix-Clone/badge.svg?branch=master2)](https://coveralls.io/github/devops-project-netflix/Netflix-Clone?branch=master2)
+
 # Completed Tasks
 
 **Flask-RESTX API server setup**
@@ -10,6 +12,8 @@
 
 **Testcases using unittest**
 
+**Integration of Frontend with the Backend**
+
 ## Ammar bin Ayaz, Sujay Lokesh, Varun Ojha
 
 Netflix Clone  
@@ -18,7 +22,8 @@ Create a video streaming web application that allows users to view video content
 Requirements:  
 REST APIs for CRUD on video content  
 Elasticsearch search on video content  
-User specific content APIs. (To store videos currently being watched by user)  
+User specific content APIs. (To store videos currently being watched by user)
+
 Video stream functional module  
 Login module (extra)  
 Browsing history logging API
@@ -58,7 +63,16 @@ JSON stub
 “Categories”:[],
 “Tags”:[]
 “Storage”:[],
-"Cast": []
+"Cast": [],
+"vote_average":rating as a number,
+"vote_count":count of votes,
+"id": identifier,
+"status": Released or not,
+"poster_path":path of poster in tmdb,
+"homepage": link to the web,
+"budget": Budget in dollars,
+"backdrop_path": Url to its image,
+"tagline":tagline for the movie
 }
 
 Milestones  
@@ -82,3 +96,21 @@ run `./local.sh`
 Added makefile  
  To push code into github `run make prod`  
  To make a development environment run `make dev_env`
+
+# Running the frontend
+
+The Frontend is independent, We are using tmdb api to fetch data  
+ for the movies. The play functionality is not working for now  
+ and we are working on that.
+
+# To run locally you need to provide tmdb api key in the MovieState.js file
+
+`cd frontend`  
+ `npm install`  
+ `npm start`  
+ Demo Application running on Netlify server  
+ https://movie-devops.netlify.app/  
+# Integration
+
+The Integration of the frontend is complete with the backend  
+To Test Just run both the servers

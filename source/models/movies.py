@@ -7,8 +7,24 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 db = connect_to_database('movies-db')
 # Setting values for use in movies test
 NUM_KEYS = 5
-SAMPLE_OBJECT_ID = '5f716d74cffb4d9a4a5f8704'
+SAMPLE_OBJECT_ID = '5f94ae84440a583101904fd6'
 SAMPLE_MOVIE_OBJECT = {'Title': 'The Shawshank Redemption'}
+MOVIE_OBJECT = {
+    "Categories": [
+      "Movie"
+    ],
+    "Description": "Testing the post method for movies api",
+    "Storage": "Azure/Test",
+    "Tags": [
+      "Drama"
+    ],
+    "Title": "I am here to test",
+    "cast": [
+      "Varun",
+      "Ammar",
+      "Sujay"
+    ]
+  }
 
 
 class MoviesModel:
@@ -33,4 +49,8 @@ class MoviesModel:
 
     def delete(self, identifier):
         movies = self.collection.delete_one({"_id": ObjectId(identifier)})
+        return movies
+
+    def getByIdNew(self, identifier):
+        movies = self.collection.find_one({"id": identifier})
         return movies

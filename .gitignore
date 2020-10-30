@@ -12,3 +12,5 @@ source/utilities/__pycache__/responses.cpython-37.pyc
 source/seeds/__pycache__/seeder.cpython-37.pyc
 source/seeds/__pycache__/seeder.cpython-37.pyc
 source/__pycache__/db.cpython-37.pyc
+node_modules/
+

@@ -8,8 +8,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 db = connect_to_database('movies-db')
 
 # setting  values to be used for testing
-SAMPLE_OBJECT_ARRAY = ['5f716d74cffb4d9a4a5f8704', '5f716d74cffb4d9a4a5f8707']
+SAMPLE_OBJECT_ARRAY = ['5f94ae84440a583101904fd6', '5f96309bcd22acd9d23ebbeb']
 TAGS_ARRAY = ['Drama', 'NotFound']
+HTML_OK = "200 OK"
+MOVIE = "Movie"
+MOVIE_LENGTH = 1
+MOVIE_NOTFOUND = 0
 
 
 class TagsModel:
@@ -38,6 +42,7 @@ class TagsModel:
         tags = []
         for i in watched:
             movies = self.collection.find_one({"_id": ObjectId(i)})
+            print(movies)
             categories.append(movies['Categories'])
             descriptions.append(movies['Description'])
             title.append(movies['Title'])

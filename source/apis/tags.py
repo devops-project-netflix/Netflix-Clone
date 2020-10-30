@@ -25,7 +25,6 @@ class Movies(Resource):
     @api.doc(responses={200: 'Movies List'})
     def get(self):
         # get all tags for all movies in DB
-        tags = []
         movies = MoviesModel().get({})
         movies_dict = [doc for doc in movies]
         tempList = [mov['Tags'] for mov in movies_dict]
@@ -71,5 +70,5 @@ class UpdateMovieTags(Resource):
     def put(self, objectId):
         category = request.get_json()
         print(category)
-        code = TagsModel().update(objectId, category)
+        TagsModel().update(objectId, category)
         return http_response(202, {"status": "category record updated"})
