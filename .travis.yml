@@ -3,6 +3,11 @@ language: python
 
 jobs:
   include:
+    # --------------------------------------------
+  - stage: requirements
+    skip_cleanup: true
+    script: 
+      - make dev_env
   # --------------------------------------------
   - stage: test
     skip_cleanup: true
