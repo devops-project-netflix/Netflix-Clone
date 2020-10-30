@@ -1,19 +1,18 @@
 language: python
-script: 
-    - make dev_env
-    - make test
+
 
 jobs:
-    include:
-    - stage: test
-        script:
-        - make test
-    
-    - stage: build+push:latest
-      
-      before_deploy: 
-        provider: script
-        script: ./travis_scripts/before_deploy.sh
+  include:
+  # --------------------------------------------
+  - stage: test
+    skip_cleanup: true
+    script: 
+      - make test
+  # --------------------------------------------
+  - stage: build+push:latest
 
-      on: 
-        branch: sujay_sl5202
+    deploy:
+      provider: script
+      script: ./travis_scripts/before_deploy.sh
+    on:
+      branch: sujay_sl5202
