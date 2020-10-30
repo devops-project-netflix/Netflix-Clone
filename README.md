@@ -109,8 +109,7 @@ The Frontend is independent, We are using tmdb api to fetch data
  `npm install`  
  `npm start`  
  Demo Application running on Netlify server  
- https://devops-frontend.netlify.app/
-
+ https://movie-devops.netlify.app/  
 # Integration
 
 The Integration of the frontend is complete with the backend  
