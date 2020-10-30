@@ -1,4 +1,4 @@
-language: python
+ language: python
 
 install: pip install -r requirements/requirements.txt
 jobs:
@@ -10,10 +10,7 @@ jobs:
       - make dev_env
       - make test
   # --------------------------------------------
-  - stage: build+push:latest
-
-    deploy:
-      provider: script
-      script: ./travis_scripts/before_deploy.sh
-    on:
-      branch: sujay_sl5202
+  - stage: build+deploy:latest
+    script: 
+      - make dev_env
+      - ./travis_scripts/deploy.sh
