@@ -1,16 +1,16 @@
-language: python
-script: 
-    - make dev_env
-    - echo "done"
+ language: python
 
-before_deploy: 
-    -cd travis_scripts
-    script: bash before_deploy.sh
-
-deploy: 
-    -cd travis_scripts
-    script: bash deploy.sh
-
-after_deploy:
-    cd travis_scripts
-    script: bash after_deploy.sh
+install: pip install -r requirements/requirements.txt
+jobs:
+  include:
+  # --------------------------------------------
+  - stage: test
+    skip_cleanup: true
+    script: 
+      - make dev_env
+      - make test
+  # --------------------------------------------
+  - stage: build+deploy:latest
+    script: 
+      - make dev_env
+      - ./travis_scripts/deploy.sh
