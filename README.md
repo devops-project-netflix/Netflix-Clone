@@ -4,6 +4,8 @@
 
 [![Actions Status](https://github.com/devops-project-netflix/Netflix-Clone/workflows/CI/badge.svg)](https://github.com/devops-project-netflix/Netflix-Clone/actions)
 
+http://ec2-52-3-255-1.compute-1.amazonaws.com/
+
 
 # Completed Tasks
 
@@ -125,6 +127,9 @@ To Test Just run both the servers
 # CI/CD Pipeline
 
 We are using GitHub Actions to handle our automated Testing.
-On succesful completion of the tests, we are connecting to AWS EC2 to pull a new version of the code.
+
+On successful completion of the tests, we are connecting to AWS EC2 to pull a new version of the code.
+
 Deployment scripts can be found under source/scripts/
+
 CI/CD Workflow files can be found under .github/workflows
