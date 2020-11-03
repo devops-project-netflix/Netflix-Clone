@@ -32,7 +32,8 @@ jobs:
           aws-region: us-east-1
       - name: Get creds
         run: |
-          ls
+         wget https://devopsnyu.s3.amazonaws.com/devops.pem
+
 
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
