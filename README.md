@@ -2,6 +2,9 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/devops-project-netflix/Netflix-Clone/badge.svg?branch=master2)](https://coveralls.io/github/devops-project-netflix/Netflix-Clone?branch=master2)
 
+[![Actions Status](https://github.com/{devops-project-netflix}/{Netflix-Clone}/workflows/{CI}/badge.svg)](https://github.com/{devops-project-netflix}/{Netflix-Clone}/actions)
+
+
 # Completed Tasks
 
 **Flask-RESTX API server setup**
@@ -13,6 +16,10 @@
 **Testcases using unittest**
 
 **Integration of Frontend with the Backend**
+
+**Hosting our application on AWS EC2**
+
+**Building a CI/CD pipeline using Github actions**
 
 ## Ammar bin Ayaz, Sujay Lokesh, Varun Ojha
 
@@ -114,3 +121,10 @@ The Frontend is independent, We are using tmdb api to fetch data
 
 The Integration of the frontend is complete with the backend  
 To Test Just run both the servers
+
+# CI/CD Pipeline
+
+We are using GitHub Actions to handle our automated Testing.
+On succesful completion of the tests, we are connecting to AWS EC2 to pull a new version of the code.
+Deployment scripts can be found under source/scripts/
+CI/CD Workflow files can be found under .github/workflows
