@@ -1,9 +1,8 @@
 import subprocess
 
-import boto3
 
-s3_client = boto3.client('s3')
-s3_client.download_file('devopsnyu','devops.pem', 'devops.pem')
+
+
 
 
 p = subprocess.Popen(['ssh','-i','devops.pem','ubuntu@ec2-52-3-255-1.compute-1.amazonaws.com'],stdin=subprocess.PIPE, stdout=subprocess.PIPE,universal_newlines=True,bufsize=0)
