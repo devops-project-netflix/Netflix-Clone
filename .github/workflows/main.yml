@@ -56,4 +56,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: build+deploy:latest
-        run: python source/scripts/deploy.py
+        run: |
+        ls
+        python source/scripts/deploy.py
