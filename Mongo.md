@@ -19,4 +19,16 @@ as our provider. To make the connection from our system it provides a connection
 
 
 
+# Setting up mongo db atlas for the project  
+1) Create a mongo db atlas account  
+2) Create the project in your organisation  
+3) Create the cluster where you will store your data. 
+   Follow https://docs.atlas.mongodb.com/tutorial/create-new-cluster/  
+4) Once the cluster is made, get the connection string  
+5) We are using pymongo library to interact with mongo db  
+6) We have created a separate file to make the connection. 
+   There we just have to write the below code to make the connection  
+ # CONNECTION_STRING = "connection_string_from_atlas"    
+ # client = pymongo.MongoClient(CONNECTION_STRING)  
+ # db = client.get_database(database)
 
