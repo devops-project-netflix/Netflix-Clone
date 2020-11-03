@@ -28,7 +28,7 @@ as our provider. To make the connection from our system it provides a connection
 5) We are using pymongo library to interact with mongo db  
 6) We have created a separate file to make the connection. 
    There we just have to write the below code to make the connection  
- # CONNECTION_STRING = "connection_string_from_atlas"    
- # client = pymongo.MongoClient(CONNECTION_STRING)  
- # db = client.get_database(database)
+   CONNECTION_STRING = "connection_string_from_atlas"    
+   client = pymongo.MongoClient(CONNECTION_STRING)  
+   db = client.get_database(database)
 
