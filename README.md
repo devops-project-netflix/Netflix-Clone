@@ -2,7 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/devops-project-netflix/Netflix-Clone/badge.svg?branch=master2)](https://coveralls.io/github/devops-project-netflix/Netflix-Clone?branch=master2)
 
-[![Actions Status](https://github.com/{devops-project-netflix}/{Netflix-Clone}/workflows/{CI}/badge.svg)](https://github.com/{devops-project-netflix}/{Netflix-Clone}/actions)
+[![Actions Status](https://github.com/devops-project-netflix/Netflix-Clone/workflows/CI/badge.svg)](https://github.com/devops-project-netflix/Netflix-Clone/actions)
 
 
 # Completed Tasks
