@@ -122,7 +122,9 @@ The Frontend is independent, We are using tmdb api to fetch data
 # Integration
 
 The Integration of the frontend is complete with the backend  
-To Test Just run both the servers
+To Test Just run both the servers  
+Now just start the frontend and it will work  
+It is referring to the deployed flask app on ec2
 
 # CI/CD Pipeline
 

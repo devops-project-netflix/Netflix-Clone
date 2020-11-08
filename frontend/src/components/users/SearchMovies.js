@@ -17,16 +17,16 @@ const SearchMovies = () => {
     if (text === "") {
       alertContext.setAlert("Please enter something", "light");
     } else {
-        movieContext.searchMovies(text);
+      movieContext.searchMovies(text);
       setText("");
     }
   };
 
   return (
     <div>
-        <p>
-            <b>Your Search for Movies Ends Here</b>
-        </p>
+      <p>
+        <b>Your Search for Movies Ends Here</b>
+      </p>
       <form className="form" onSubmit={onSubmit}>
         <input
           type="text"
@@ -49,7 +49,16 @@ const SearchMovies = () => {
           Clear
         </button>
       )}
+      {movieContext.movies.length === 0 && (
+        <button
+          className="btn btn-light btn-block"
+          onClick={movieContext.getAllMovie}
+        >
+          Show All
+        </button>
+      )}
     </div>
+
   );
 };
 
