@@ -12,11 +12,11 @@ import {
 } from "../types";
 
 
-const BASE_URI = "http://ec2-52-3-255-1.compute-1.amazonaws.com";
-const client = axios.create({
-  baseURL: BASE_URI,
-  json: true
-})
+// const BASE_URI = "http://ec2-52-3-255-1.compute-1.amazonaws.com";
+// const client = axios.create({
+//   baseURL: BASE_URI,
+//   json: true
+// })
 
 const MovieState = (props) => {
   const initialState = {
@@ -45,7 +45,7 @@ const MovieState = (props) => {
   const searchMovies = async (text) => {
     //console.log(text)
     setLoading();
-    const res = await axios.get(`/Movies/api/movies?Title=${text}`);
+    const res = await axios.get(`http://ec2-52-3-255-1.compute-1.amazonaws.com/Movies/api/movies?Title=${text}`);
     console.log(res.data.data);
     dispatch({
       type: SEARCH_MOVIES,
@@ -71,7 +71,7 @@ const MovieState = (props) => {
   const getMovie = async (id) => {
     setLoading();
     const res = await axios.get(
-      `/Movies/api/movies/id/${id}`
+      `http://ec2-52-3-255-1.compute-1.amazonaws.com/Movies/api/movies/id/${id}`
     );
     console.log(res.data.data);
 
@@ -86,7 +86,7 @@ const MovieState = (props) => {
   const getAllMovie = async () => {
     setLoading();
     const res = await axios.get(
-      `/Movies/api/movies`
+      `http://ec2-52-3-255-1.compute-1.amazonaws.com/Movies/api/movies`
     );
     console.log(res.data.data);
 
