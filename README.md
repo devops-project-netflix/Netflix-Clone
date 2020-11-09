@@ -6,7 +6,9 @@
 
 http://ec2-52-3-255-1.compute-1.amazonaws.com/
 
-
+# Frontend  
+For frontend please refer to below repo  
+https://github.com/devops-project-netflix/Movie-Frontend  
 # Completed Tasks
 
 **Flask-RESTX API server setup**
