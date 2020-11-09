@@ -7,3 +7,8 @@ COPY ./requirements/requirements.txt /app
 
 RUN ls -l && pwd
 RUN pip3 install -r requirements.txt
+
+EXPOSE 5000
+
+ENTRYPOINT ["sh"]
+CMD ["local.sh"]
