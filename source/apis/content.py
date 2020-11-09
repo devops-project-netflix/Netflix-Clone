@@ -7,6 +7,7 @@ from utilities.responses import http_response
 from utilities.storage import upload
 from utilities.validate import allowed_file
 
+
 api = Namespace('Content', description='upload & transencoding video endpoints')
 
 parser = api.parser()
@@ -36,4 +37,4 @@ class Content(Resource):
         else:
         	return http_response(422, {"status": "please use mp4 file"})
         	
-        return http_response(201, {"status": "category record inserted"})
+        return http_response(201, {"status": "video content record added"})

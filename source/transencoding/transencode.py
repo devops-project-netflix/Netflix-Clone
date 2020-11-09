@@ -1,22 +1,8 @@
 import ffmpeg_streaming
 from ffmpeg_streaming import Formats, Bitrate, Representation, Size
 from ffmpeg_streaming import S3, CloudManager
-import os
+from config import S3_KEY, S3_SECRET, S3_REGION
 
-import boto3
-import sys
-sys.setrecursionlimit(5000)
-
-session = boto3.Session()
-credentials = session.get_credentials()
-
-
-print(credentials)
-
-
-S3_KEY                    = credentials.access_key
-S3_SECRET                 = credentials.secret_key
-S3_REGION                 = session.region_name
 
 
 s3 = S3(aws_access_key_id=S3_KEY, aws_secret_access_key=S3_SECRET, region_name=S3_REGION)

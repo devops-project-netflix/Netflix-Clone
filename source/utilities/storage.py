@@ -2,6 +2,8 @@ import logging
 import boto3
 from botocore.exceptions import ClientError
 
+from config import VIDEO_CONTENT_BUCKET
+
 
 s3 = boto3.client("s3")
 
@@ -12,7 +14,7 @@ s3 = boto3.client("s3")
 # )
 
 def upload(file):
-    s3_upload_file(file, "all-the-lambdas")
+    s3_upload_file(file, VIDEO_CONTENT_BUCKET)
 
 def s3_upload_file(file, bucket_name, acl="public-read"):
 
