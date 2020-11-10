@@ -23,6 +23,12 @@ http://ec2-52-3-255-1.compute-1.amazonaws.com/
 
 **Building a CI/CD pipeline using Github actions**
 
+**Create a docker executable**
+
+Docker Command reference
+
+docker build -t image_name .
+
 ## Ammar bin Ayaz, Sujay Lokesh, Varun Ojha
 
 Netflix Clone  
