@@ -31,16 +31,18 @@ class Content(Resource):
     def post(self):
         file = request.files['file']
         if file.filename == "":
-        	return http_response(422, {"status": "please use valid mp4 file"})
+            return http_response(422, {"status": "please use valid mp4 file"})
 
         if file and allowed_file(file.filename):
-        	upload(request.files['file'])
-            content = []
+            upload(request.files['file'])
+            content = {}
             content['content'] = file.filename
             content['bucket'] = VIDEO_CONTENT_BUCKET
             content['status'] = 'PENDING'
             ContentModel().insert(content)
         else:
-        	return http_response(422, {"status": "please use valid mp4 file"})
-        	
+            return http_response(422, {"status": "please use valid mp4 file"})
+            
         return http_response(201, {"status": "video content record added"})
+
+
