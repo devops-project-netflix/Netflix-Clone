@@ -4,20 +4,21 @@ import MovieContext from "./movieContext";
 import MovieReducer from "./movieReducer";
 
 import {
-  CLEAR_MOVIES ,
+  CLEAR_MOVIES,
   SET_LOADING,
   SEARCH_MOVIES,
-  GET_MOVIE
+  GET_MOVIE,
+  GET_ALL_MOVIE
 } from "../types";
 
 
-  const BASE_URI = "http://localhost:8000";
-  const client = axios.create({
-    baseURL: BASE_URI,
-    json: true
-  })
+const BASE_URI = "http://ec2-52-3-255-1.compute-1.amazonaws.com";
+const client = axios.create({
+  baseURL: BASE_URI,
+  json: true
+})
 
-  const MovieState = (props) => {
+const MovieState = (props) => {
   const initialState = {
 
     loading: false,
@@ -52,35 +53,48 @@ import {
     });
   };
 
-    // // get movie
-    // const getMovie = async (id) => {
-    //   setLoading();
-    //   const res = await axios.get(
-    //     `https://api.themoviedb.org/3/movie/${id}?api_key=c38bb903dbeea0ea6970e15e7fff4f85&append_to_response=credits`
-    //     );
-    //   console.log(res.data);
-  
-    //   dispatch({
-    //     type: GET_MOVIE,
-    //     payload: res.data,
-    //   });
-    // };
+  // // get movie
+  // const getMovie = async (id) => {
+  //   setLoading();
+  //   const res = await axios.get(
+  //     `https://api.themoviedb.org/3/movie/${id}?api_key=c38bb903dbeea0ea6970e15e7fff4f85&append_to_response=credits`
+  //     );
+  //   console.log(res.data);
 
-        // get movie
-        const getMovie = async (id) => {
-          setLoading();
-          const res = await axios.get(
-            `/Movies/api/movies/id/${id}`
-            );
-          console.log(res.data.data);
-      
-          dispatch({
-            type: GET_MOVIE,
-            payload: res.data.data,
-          });
-        };
-    
+  //   dispatch({
+  //     type: GET_MOVIE,
+  //     payload: res.data,
+  //   });
+  // };
 
+  // get movie
+  const getMovie = async (id) => {
+    setLoading();
+    const res = await axios.get(
+      `/Movies/api/movies/id/${id}`
+    );
+    console.log(res.data.data);
+
+    dispatch({
+      type: GET_MOVIE,
+      payload: res.data.data,
+    });
+  };
+
+  //get all the movies on cliclking show all
+
+  const getAllMovie = async () => {
+    setLoading();
+    const res = await axios.get(
+      `/Movies/api/movies`
+    );
+    console.log(res.data.data);
+
+    dispatch({
+      type: GET_ALL_MOVIE,
+      payload: res.data.data,
+    });
+  };
 
   //clear users
   // To clear the users
@@ -98,7 +112,8 @@ import {
         movie: state.movie,
         clearUsers,
         searchMovies,
-        getMovie
+        getMovie,
+        getAllMovie
       }}
     >
       {props.children}

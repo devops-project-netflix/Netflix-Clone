@@ -33,6 +33,9 @@ class TestMoviesMethods(unittest.TestCase):
         inserted = MoviesModel().insert(MOVIE_OBJECT)
         fetch_inserted = MoviesModel().getById(inserted.inserted_id)
         self.assertEqual(MOVIE_OBJECT['Title'], fetch_inserted['Title'])
+        inserted_id = inserted.inserted_id
+        inserted = MoviesModel().delete(inserted_id)
+
 
     def test_Movies_Delete(self):
         inserted = MoviesModel().insert(MOVIE_OBJECT)
