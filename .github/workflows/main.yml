@@ -24,21 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          # TODO Change your AWS region here!
-          aws-region: us-east-1
-      - name: Get creds
-        run: |
-          wget https://devopsnyu.s3.amazonaws.com/devops.pem
-          chmod 400 devops.pem
-
-
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -60,6 +45,18 @@ jobs:
     # Runs a set of commands using the runners shell
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          # TODO Change your AWS region here!
+          aws-region: us-east-1
+      - name: Get creds
+        run: |
+          wget https://devopsnyu.s3.amazonaws.com/devops.pem
+          chmod 400 devops.pem
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
         with:
@@ -73,3 +70,4 @@ jobs:
       - name: build+deploy:latest
         run: |
           ls
+          python source/scripts/deploy.py
