@@ -35,8 +35,8 @@ jobs:
           aws-region: us-east-1
       - name: Get creds
         run: |
-        wget https://devopsnyu.s3.amazonaws.com/devops.pem
-        chmod 400 devops.pem
+          wget https://devopsnyu.s3.amazonaws.com/devops.pem
+          chmod 400 devops.pem
 
 
       - name: Set up Python 3.x
