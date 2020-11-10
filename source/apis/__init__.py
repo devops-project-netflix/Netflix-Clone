@@ -2,7 +2,7 @@ from flask_restx import Api
 from .movies import api as m
 from .categories import api as c
 from .tags import api as t
-
+from .content import api as ct
 api = Api(
     version='1.0',
     title='Netflix Clone APIs',
@@ -12,3 +12,4 @@ api = Api(
 api.add_namespace(m)
 api.add_namespace(c)
 api.add_namespace(t)
+api.add_namespace(ct)

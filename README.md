@@ -25,6 +25,12 @@ https://github.com/devops-project-netflix/Movie-Frontend
 
 **Building a CI/CD pipeline using Github actions**
 
+**Create a docker executable**
+
+Docker Command reference
+
+docker build -t image_name .
+
 ## Ammar bin Ayaz, Sujay Lokesh, Varun Ojha
 
 Netflix Clone  
