@@ -20,7 +20,8 @@ as our provider. To make the connection from our system it provides a connection
 
 
 # Setting up mongo db atlas for the project  
-1) Create a mongo db atlas account  
+1) Create a mongo db atlas account, create an organisation  
+   or use the default provided by Atlas.
 2) Create the project in your organisation  
 3) Create the cluster where you will store your data. 
    Follow https://docs.atlas.mongodb.com/tutorial/create-new-cluster/  
