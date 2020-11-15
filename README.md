@@ -116,21 +116,22 @@ Added makefile
 
 # Running the frontend
 
-The Frontend is independent, We are using tmdb api to fetch data  
- for the movies. The play functionality is not working for now  
- and we are working on that.
+The Frontend is independent,The play functionality is not working for now  
+and we are working on that.
 
-# To run locally you need to provide tmdb api key in the MovieState.js file
-
-`cd frontend`  
+# To run locally visit the frontend repo
+The Frontend code is being maintained in a separate repo  
+The cleanup of frontend will happen soon  
+The Frontend is independent, and deployed on AWS amplify
+Locally:  
+Clone the Repo
  `npm install`  
  `npm start`  
- Demo Application running on Netlify server  
- https://movie-devops.netlify.app/  
+ Demo Application running on AWS Amplify server  
+ https://master.d3g8trqb4bccnl.amplifyapp.com/    
 # Integration
 
 The Integration of the frontend is complete with the backend  
-To Test Just run both the servers  
 Now just start the frontend and it will work  
 It is referring to the deployed flask app on ec2
 
