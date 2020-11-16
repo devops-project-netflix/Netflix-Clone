@@ -30,6 +30,7 @@ https://github.com/devops-project-netflix/Movie-Frontend
 Docker Command reference
 
 docker build -t image_name .
+docker run -it image_name
 
 ## Ammar bin Ayaz, Sujay Lokesh, Varun Ojha
 
