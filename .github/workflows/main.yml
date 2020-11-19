@@ -65,6 +65,11 @@ jobs:
           # Optional - x64 or x86 architecture, defaults to x64
           architecture: 'x64' 
       # You can test your matrix by printing the current Python version
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Get the version
+        id: vars
+        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: build+deploy:latest
