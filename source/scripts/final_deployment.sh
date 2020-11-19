@@ -7,8 +7,6 @@ get_aws_creds_local () {
 }
 
 get_aws_creds_local
-echo $AWS_ACCESS_KEY_ID
-echo $AWS_SECRET_ACCESS_KEY
 
 fuser -k 80/tcp
 sudo docker stop $(sudo docker ps -aq)
