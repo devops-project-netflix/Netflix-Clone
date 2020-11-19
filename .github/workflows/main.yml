@@ -70,6 +70,14 @@ jobs:
       - name: Get the version
         id: vars
         run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+      - name: Build the tagged Docker image
+        run: docker build . --file Dockerfile --tag devopsnetflix/devops:${{steps.vars.outputs.tag}}
+      - name: Push the tagged Docker image
+        run: docker push devopsnetflix/devops:${{steps.vars.outputs.tag}}
+      - name: Build the latest Docker image
+        run: docker build . --file Dockerfile --tag devopsnetflix/devops:latest
+      - name: Push the latest Docker image
+        run: docker push devopsnetflix/devops:latest
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: build+deploy:latest
