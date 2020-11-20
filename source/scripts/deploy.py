@@ -25,7 +25,7 @@ p.stdin.write("bash final_deployment.sh")
 p.stdin.close()
 count = 0
 for line in iter(p.stdout.readline, b''):
-    if count <= 20:
+    if count <= 50:
         print(">>> " + line.rstrip())
         count += 1
     else:
