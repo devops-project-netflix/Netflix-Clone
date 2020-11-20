@@ -23,4 +23,6 @@ p.stdin.write("git pull")
 p.stdin.write("cd source/scripts")
 p.stdin.write("bash final_deployment.sh")
 p.stdin.close()
+for line in iter(p.stdout.readline, b''):
+    print(">>> " + line.rstrip())
 print("Done")
