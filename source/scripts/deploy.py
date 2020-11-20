@@ -27,6 +27,7 @@ count = 0
 for line in iter(p.stdout.readline, b''):
     if count <= 20:
         print(">>> " + line.rstrip())
+        count += 1
     else:
         break
 print("Done")
