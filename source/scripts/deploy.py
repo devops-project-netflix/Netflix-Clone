@@ -23,6 +23,10 @@ p.stdin.write("git pull")
 p.stdin.write("cd source/scripts")
 p.stdin.write("bash final_deployment.sh")
 p.stdin.close()
+count = 0
 for line in iter(p.stdout.readline, b''):
-    print(">>> " + line.rstrip())
+    if count <= 20:
+        print(">>> " + line.rstrip())
+    else:
+        break
 print("Done")
