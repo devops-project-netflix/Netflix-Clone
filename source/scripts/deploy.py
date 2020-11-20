@@ -16,7 +16,9 @@ p = subprocess.Popen(
 )
 
 p.stdin.write("source /home/ubuntu/mypy36venv/bin/activate\n")
+
 p.stdin.write("cd Netflix-Clone")
+p.stdin.write("git reset --hard HEAD")
 p.stdin.write("git pull")
 p.stdin.write("cd source/scripts")
 p.stdin.write("bash final_deployment.sh")
