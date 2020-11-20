@@ -6,16 +6,15 @@ from models.movies import SAMPLE_OBJECT_ID, SAMPLE_MOVIE_OBJECT
 from models.movies import MOVIE_OBJECT
 from models.tags import MOVIE_LENGTH
 
-api = Namespace('Movies', description='all movies endpoints')
+api = Namespace("Movies", description="all movies endpoints")
 
 parser = api.parser()
-parser.add_argument('Title', type=str, help='movie name', location='param')
-parser.add_argument('Categories', type=str, help='category', location='param')
-parser.add_argument('Tags', type=str, help='movie tags', location='param')
+parser.add_argument("Title", type=str, help="movie name", location="param")
+parser.add_argument("Categories", type=str, help="category", location="param")
+parser.add_argument("Tags", type=str, help="movie tags", location="param")
 
 
 class TestMoviesMethods(unittest.TestCase):
-
     def test_Movies_Get(self):
 
         m = MoviesModel().get({})
@@ -32,10 +31,9 @@ class TestMoviesMethods(unittest.TestCase):
     def test_Movies_Post(self):
         inserted = MoviesModel().insert(MOVIE_OBJECT)
         fetch_inserted = MoviesModel().getById(inserted.inserted_id)
-        self.assertEqual(MOVIE_OBJECT['Title'], fetch_inserted['Title'])
+        self.assertEqual(MOVIE_OBJECT["Title"], fetch_inserted["Title"])
         inserted_id = inserted.inserted_id
         inserted = MoviesModel().delete(inserted_id)
-
 
     def test_Movies_Delete(self):
         inserted = MoviesModel().insert(MOVIE_OBJECT)
