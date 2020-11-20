@@ -1,7 +1,7 @@
 from flask import request
 from werkzeug.datastructures import FileStorage
 
-from flask_restx import Resource, fields, Namespace
+from flask_restx import Resource, Namespace
 from models.content import ContentModel
 from utilities.responses import http_response
 from utilities.storage import upload
@@ -9,7 +9,7 @@ from utilities.validate import allowed_file
 from config import VIDEO_CONTENT_BUCKET
 
 
-api = Namespace('Content', description='upload & transencoding video endpoints')
+api = Namespace('Content', description='upload& transencoding video endpoints')
 
 parser = api.parser()
 parser.add_argument('file', type=FileStorage, location='files')
@@ -42,7 +42,4 @@ class Content(Resource):
             ContentModel().insert(content)
         else:
             return http_response(422, {"status": "please use valid mp4 file"})
-            
         return http_response(201, {"status": "video content record added"})
-
-

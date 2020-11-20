@@ -4,6 +4,7 @@ from testfiles.Categories_test import TestCategoriesMethods
 # from tests.Categories_test import TestStringMethods
 import unittest
 
+
 """
 To run your test files
 use the format :
@@ -12,6 +13,7 @@ Also don't forget to import your module
 """
 
 if __name__ == '__main__':
+    
     suite = unittest.TestSuite()
     suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestTagsMethods))
     suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestMoviesMethods))

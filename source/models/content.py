@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 db = connect_to_database('movies-db')
 
-SAMPLE_CONTENT_OBJECT = {'content': 'the-shawshank-redemption.mp4','status':'PENDING', 'bucket':'bucket', 'dash-content':'t-s-r.mpd'}
+SAMPLE_CONTENT_OBJECT = {'content': 'the-shawshank-redemption.mp4', 'status' :'PENDING', 'bucket':'bucket', 'dash-content':'t-s-r.mpd'}
 
 class ContentModel:
     def __init__(self):
