@@ -7,7 +7,7 @@ p = subprocess.Popen(
         "StrictHostKeyChecking=no",
         "-i",
         "devops.pem",
-        "ubuntu@ec2-52-3-255-1.compute-1.amazonaws.com",
+        "ubuntu@ec2-52-72-32-138.compute-1.amazonaws.com",
     ],
     stdin=subprocess.PIPE,
     stdout=subprocess.PIPE,
