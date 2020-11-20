@@ -16,18 +16,11 @@ p = subprocess.Popen(
 )
 
 p.stdin.write("source /home/ubuntu/mypy36venv/bin/activate\n")
-
-p.stdin.write("cd Netflix-Clone")
-p.stdin.write("git reset --hard HEAD")
-p.stdin.write("git pull")
-p.stdin.write("cd source/scripts")
-p.stdin.write("bash final_deployment.sh")
+p.stdin.write("cd Netflix-Clone\n")
+p.stdin.write("git reset --hard HEAD\n")
+p.stdin.write("git pull\n")
+p.stdin.write("cd source/scripts\n")
+p.stdin.write("bash final_deployment.sh\n")
 p.stdin.close()
-count = 0
-for line in iter(p.stdout.readline, b''):
-    if count <= 50:
-        print(">>> " + line.rstrip())
-        count += 1
-    else:
-        break
+print(p.stdout.read())
 print("Done")
