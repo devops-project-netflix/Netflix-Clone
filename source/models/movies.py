@@ -56,5 +56,5 @@ class MoviesModel:
         return movies
 
     def getMovieRegex(self, query):
-        movies = self.collection.find({"Title": {'$regex':query}})
+        movies = self.collection.find({"Title": {'$regex': query}})
         return movies
