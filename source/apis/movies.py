@@ -79,6 +79,15 @@ class MoviesByIdFront(Resource):
         movie = MoviesModel().getByIdNew(id)
         return http_response(200, movie)
 
+
+@api.route('/api/movies/search/<string:query>')
+class MoviesSearchRegex(Resource):
+    @api.doc(responses={200: 'A movie doc'})
+    def get(self, query):
+        movies = MoviesModel().getMovieRegex(query)
+        movies_dict = [doc for doc in movies]
+        return http_response(200, movies_dict)
+
 # 1. Standardize the REST in movies
 # 2. Add the categories REST
 # 3. Check for better swagger

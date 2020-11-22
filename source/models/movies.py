@@ -54,3 +54,7 @@ class MoviesModel:
     def getByIdNew(self, identifier):
         movies = self.collection.find_one({"id": identifier})
         return movies
+
+    def getMovieRegex(self, query):
+        movies = self.collection.find({"Title": {'$regex':query}})
+        return movies
