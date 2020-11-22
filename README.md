@@ -4,7 +4,7 @@
 
 [![Actions Status](https://github.com/devops-project-netflix/Netflix-Clone/workflows/CI/badge.svg)](https://github.com/devops-project-netflix/Netflix-Clone/actions)
 
-http://ec2-52-3-255-1.compute-1.amazonaws.com/
+http://ec2-52-72-32-138.compute-1.amazonaws.com/
 
 # Frontend  
 For frontend please refer to below repo  
