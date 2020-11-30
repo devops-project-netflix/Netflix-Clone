@@ -3,4 +3,4 @@ flask-restx
 flask-pymongo
 dnspython
 boto3
-python-coveralls
+coveralls
