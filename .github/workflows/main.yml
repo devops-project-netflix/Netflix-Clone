@@ -37,7 +37,8 @@ jobs:
 
       - name: Install Dependencies
         run: make dev_env
-
+      - name: Run Tests and Get Coverage
+        run: make getcov
       # Runs a single command using the runners shell
       - name: Run Tests and make sure code is linted
         run: make tests
