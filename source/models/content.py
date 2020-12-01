@@ -39,6 +39,6 @@ class ContentModel:
         content = self.collection.delete_one({"_id": ObjectId(identifier)})
         return content
 
-    def getByIdNew(self, identifier):
-        content = self.collection.find_one({"id": identifier})
-        return content
+    # def getByIdNew(self, identifier):
+    #     content = self.collection.find_one({"id": identifier})
+    #     return content
