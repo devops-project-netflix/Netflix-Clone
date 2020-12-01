@@ -73,10 +73,6 @@ jobs:
         run: echo ::set-output name=tag::$(echo ${GITHUB_REF:11})
       - name: echoes
         run: echo ${GITHUB_REF}
-      - name: Build the tagged Docker image
-        run: docker build . --file Dockerfile --tag devopsnetflix/devops:${{steps.vars.outputs.tag}}
-      - name: Push the tagged Docker image
-        run: docker push devopsnetflix/devops:${{steps.vars.outputs.tag}}
       - name: Build the latest Docker image
         run: docker build . --file Dockerfile --tag devopsnetflix/devops:latest
       - name: Push the latest Docker image
