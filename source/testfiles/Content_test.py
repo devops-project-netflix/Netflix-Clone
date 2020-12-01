@@ -1,5 +1,4 @@
 import unittest
-from flask_restx import Namespace
 from models.content import ContentModel
 from models.content import SAMPLE_CONTENT_OBJECT, NUM_KEYS
 
@@ -18,7 +17,8 @@ class TestContentMethods(unittest.TestCase):
     def test_Content_Post(self):
         inserted = ContentModel().insert(SAMPLE_CONTENT_OBJECT)
         fetch_inserted = ContentModel().getById(inserted.inserted_id)
-        self.assertEqual(SAMPLE_CONTENT_OBJECT['content'], fetch_inserted['content'])
+        self.assertEqual(SAMPLE_CONTENT_OBJECT['content'],
+                         fetch_inserted['content'])
 
     def test_Categories_Delete(self):
         inserted = ContentModel().insert(SAMPLE_CONTENT_OBJECT)
