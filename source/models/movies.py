@@ -8,6 +8,8 @@ db = connect_to_database('movies-db')
 # Setting values for use in movies test
 NUM_KEYS = 5
 SAMPLE_OBJECT_ID = '5f96309bcd22acd9d23ebbeb'
+SAMPLE_MOVIE_ID = 75780
+SAMPLE_REGEX = 'Jack'
 SAMPLE_MOVIE_OBJECT = {'Title': 'The Shawshank Redemption'}
 MOVIE_OBJECT = {
     "Categories": [

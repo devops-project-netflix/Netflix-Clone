@@ -3,6 +3,7 @@ import unittest
 from flask_restx import Namespace
 from models.movies import MoviesModel, NUM_KEYS
 from models.movies import SAMPLE_OBJECT_ID, SAMPLE_MOVIE_OBJECT
+from models.movies import SAMPLE_MOVIE_ID, SAMPLE_REGEX
 from models.movies import MOVIE_OBJECT
 from models.tags import MOVIE_LENGTH
 
@@ -41,3 +42,12 @@ class TestMoviesMethods(unittest.TestCase):
         inserted = MoviesModel().delete(inserted_id)
         deleted = MoviesModel().getById(inserted_id)
         self.assertIsNone(deleted)
+
+    def test_Movies_Get_ByIdNew(self):
+        m = MoviesModel().getByIdNew(SAMPLE_MOVIE_ID)
+        self.assertGreaterEqual(len(m.keys()), NUM_KEYS)
+
+    def test_Movies_Get_By_Regex(self):
+        m = MoviesModel().getMovieRegex(SAMPLE_REGEX)
+        print(m.count())
+        self.assertGreaterEqual(m.count(), MOVIE_LENGTH)
