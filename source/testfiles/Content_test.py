@@ -18,11 +18,7 @@ class TestContentMethods(unittest.TestCase):
         inserted = ContentModel().insert(SAMPLE_CONTENT_OBJECT)
         fetch_inserted = ContentModel().getById(inserted.inserted_id)
         self.assertEqual(SAMPLE_CONTENT_OBJECT['content'],
-<<<<<<< HEAD
                          fetch_inserted['content'])
-=======
-         fetch_inserted['content'])
->>>>>>> 348bec4803387815f58d4f00305c8ae371c27974
 
     def test_Categories_Delete(self):
         inserted = ContentModel().insert(SAMPLE_CONTENT_OBJECT)
