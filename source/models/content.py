@@ -14,6 +14,8 @@ SAMPLE_CONTENT_OBJECT = {
     "dash-content": "t-s-r.mpd",
 }
 
+NUM_KEYS = 5
+
 
 class ContentModel:
     def __init__(self):
